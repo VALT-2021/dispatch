@@ -200,8 +200,9 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
             client.api.webhooks(client.user.id, interaction.token).messages('@original').patch({data: {content:content}})
         }
         if (user === interaction.member.user.id) return interactionEditReply(`**Statistics**\nGlobal: ${totalScore}\nGuild: ${guildScore}\nYou: ${userScore}`)
-        else return interactionEditReply(`User: ${userScore}`)
+        else return interactionEditReply(`**Statistics**\nGlobal: ${totalScore}\nGuild: ${guildScore}\nYou: ${userScore}`)
     }
+    if (interaction.data.name === 'dispatchmetainvite') return interactionReply(`Invite Dispatch to your server [here](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands) \nView [source code](https://github.com/VALT-2021/dispatch) on Github`,true)
 })
 
 client.login(config.token)
