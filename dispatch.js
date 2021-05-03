@@ -163,7 +163,7 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
               })
         }
         soundName = soundName.toLowerCase()
-        const player = await connection.play(fs.createReadStream(`./src/streams/${soundName}.ogg`), {
+        const player = await connection.play(fs.createReadStream(`./${soundName}.ogg`), {
             type: 'ogg/opus',
         })
         player.on('finish', () => {
