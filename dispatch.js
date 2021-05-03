@@ -2,9 +2,9 @@ const fs = require('fs')
 
 const config = require('./config.json')
 
-const log = require('./structs/functions/log.js')
-const random = require('./structs/functions/random.js')
-const randomText = require('./structs/functions/randomText.js')
+const log = require('./log.js')
+const random = require('./random.js')
+const randomText = require('./randomText.js')
 
 const Discord = require('discord.js')
 const client = new Discord.Client()
@@ -13,8 +13,6 @@ const cooldown = new Discord.Collection()
 
 const edb = require("@betadv/easy-db")
 const db = new edb()
-
-
 
 client.on('ready', async ready => {
     log(`Logged in as ${client.user.tag}`,1)
